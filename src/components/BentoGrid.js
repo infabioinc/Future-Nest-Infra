@@ -40,28 +40,46 @@ export default function BentoGrid() {
           </div>
 
           {/* Item 2: Industrial Corridor */}
-          <div className="bento-item">
-            <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px" }}>
-              <Compass size={24} style={{ color: "var(--accent-blue)" }} />
-            </div>
-            <div>
-              <h3 style={{ fontSize: "1.25rem", marginBottom: "8px", fontWeight: "600" }}>DMIC Industrial Corridor</h3>
-              <p style={{ fontSize: "0.85rem", lineHeight: "1.5" }}>
-                Positioned as the leading investment node of the Delhi-Mumbai Industrial Corridor (DMIC).
-              </p>
+          <div className="bento-item" style={{ position: "relative", overflow: "hidden", border: "none" }}>
+            <Image
+              src="/assets/dmic-map.png"
+              alt="DMIC Industrial Corridor Map"
+              fill
+              sizes="(max-width: 991px) 100vw, 33vw"
+              style={{ objectFit: "cover", zIndex: 1, opacity: 0.3 }}
+            />
+            <div style={{ position: "relative", zIndex: 2, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px", backdropFilter: "blur(4px)" }}>
+                <Compass size={24} style={{ color: "var(--accent-blue)" }} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: "1.25rem", marginBottom: "8px", fontWeight: "600" }}>DMIC Industrial Corridor</h3>
+                <p style={{ fontSize: "0.85rem", lineHeight: "1.5", color: "var(--text-secondary)", fontWeight: "500" }}>
+                  Positioned as the leading investment node of the Delhi-Mumbai Industrial Corridor (DMIC).
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Item 3: Government Backing */}
-          <div className="bento-item">
-            <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px" }}>
-              <Award size={24} style={{ color: "var(--accent-blue)" }} />
-            </div>
-            <div>
-              <h3 style={{ fontSize: "1.25rem", marginBottom: "8px", fontWeight: "600" }}>Government Backed</h3>
-              <p style={{ fontSize: "0.85rem", lineHeight: "1.5" }}>
-                Direct regulatory support and state-backed master zoning for absolute security.
-              </p>
+          <div className="bento-item" style={{ position: "relative", overflow: "hidden", border: "none" }}>
+            <Image
+              src="/assets/government-backed.jpg"
+              alt="Government Backed"
+              fill
+              sizes="(max-width: 991px) 100vw, 33vw"
+              style={{ objectFit: "cover", zIndex: 1, opacity: 0.15 }}
+            />
+            <div style={{ position: "relative", zIndex: 2, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px", backdropFilter: "blur(4px)" }}>
+                <Award size={24} style={{ color: "var(--accent-blue)" }} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: "1.25rem", marginBottom: "8px", fontWeight: "600" }}>Government Backed</h3>
+                <p style={{ fontSize: "0.85rem", lineHeight: "1.5", color: "var(--text-secondary)", fontWeight: "500" }}>
+                  Direct regulatory support and state-backed master zoning for absolute security.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -75,12 +93,12 @@ export default function BentoGrid() {
               style={{ objectFit: "cover", zIndex: 1, opacity: 0.15 }}
             />
             <div style={{ position: "relative", zIndex: 2, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-              <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px" }}>
+              <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px", backdropFilter: "blur(4px)" }}>
                 <Cpu size={24} style={{ color: "var(--accent-blue)" }} />
               </div>
               <div>
                 <h3 style={{ fontSize: "1.35rem", marginBottom: "12px", fontWeight: "600" }}>Smart Infrastructure</h3>
-                <p style={{ fontSize: "0.9rem", lineHeight: "1.6" }}>
+                <p style={{ fontSize: "0.9rem", lineHeight: "1.6", color: "var(--text-secondary)", fontWeight: "500" }}>
                   Features a subterranean utility duct corridor carrying electricity, gas, sewage, water pipelines, and fiber optic cabling. No overhead wires, no dug-up streets.
                 </p>
               </div>
@@ -88,28 +106,46 @@ export default function BentoGrid() {
           </div>
 
           {/* Item 5: Economic Growth */}
-          <div className="bento-item">
-            <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px" }}>
-              <Briefcase size={24} style={{ color: "var(--accent-blue)" }} />
-            </div>
-            <div>
-              <h3 style={{ fontSize: "1.25rem", marginBottom: "8px", fontWeight: "600" }}>Economic Growth</h3>
-              <p style={{ fontSize: "0.85rem", lineHeight: "1.5" }}>
-                Supported by upcoming semiconductor fabrication hubs creating thousands of high-income jobs.
-              </p>
+          <div className="bento-item" style={{ position: "relative", overflow: "hidden", border: "none" }}>
+            <Image
+              src="/assets/economic-growth.jpg"
+              alt="Economic Growth"
+              fill
+              sizes="(max-width: 991px) 100vw, 33vw"
+              style={{ objectFit: "cover", zIndex: 1, opacity: 0.15 }}
+            />
+            <div style={{ position: "relative", zIndex: 2, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px", backdropFilter: "blur(4px)" }}>
+                <Briefcase size={24} style={{ color: "var(--accent-blue)" }} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: "1.25rem", marginBottom: "8px", fontWeight: "600" }}>Economic Growth</h3>
+                <p style={{ fontSize: "0.85rem", lineHeight: "1.5", color: "var(--text-secondary)", fontWeight: "500" }}>
+                  Supported by upcoming semiconductor fabrication hubs creating thousands of high-income jobs.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Item 6: Future Appreciation */}
-          <div className="bento-item">
-            <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px" }}>
-              <TrendingUp size={24} style={{ color: "var(--accent-blue)" }} />
-            </div>
-            <div>
-              <h3 style={{ fontSize: "1.25rem", marginBottom: "8px", fontWeight: "600" }}>Future Appreciation</h3>
-              <p style={{ fontSize: "0.85rem", lineHeight: "1.5" }}>
-                Early-stage investment ensures strong double-digit growth trajectory as nodes complete.
-              </p>
+          <div className="bento-item" style={{ position: "relative", overflow: "hidden", border: "none" }}>
+            <Image
+              src="/assets/future-appreciation.jpg"
+              alt="Future Appreciation"
+              fill
+              sizes="(max-width: 991px) 100vw, 33vw"
+              style={{ objectFit: "cover", zIndex: 1, opacity: 0.15 }}
+            />
+            <div style={{ position: "relative", zIndex: 2, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div style={{ backgroundColor: "var(--bg-secondary)", width: "fit-content", padding: "10px", borderRadius: "10px", backdropFilter: "blur(4px)" }}>
+                <TrendingUp size={24} style={{ color: "var(--accent-blue)" }} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: "1.25rem", marginBottom: "8px", fontWeight: "600" }}>Future Appreciation</h3>
+                <p style={{ fontSize: "0.85rem", lineHeight: "1.5", color: "var(--text-secondary)", fontWeight: "500" }}>
+                  Early-stage investment ensures strong double-digit growth trajectory as nodes complete.
+                </p>
+              </div>
             </div>
           </div>
         </div>
