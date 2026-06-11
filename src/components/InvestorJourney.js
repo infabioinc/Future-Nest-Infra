@@ -52,38 +52,45 @@ export default function InvestorJourney() {
     const el = containerRef.current;
     
     const ctx = gsap.context(() => {
-      // Animate progress line width on scroll
-      gsap.fromTo(
-        ".roadmap-line-fill",
-        { width: "0%" },
-        {
-          width: "100%",
-          ease: "none",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 75%",
-            end: "bottom 60%",
-            scrub: 1
-          }
+      // Coordinated timeline scrubbed to scroll
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: "top 75%",
+          end: "bottom 60%",
+          scrub: 1
         }
-      );
-      
-      // Stagger animate individual nodes
-      gsap.fromTo(
-        ".roadmap-node",
-        { opacity: 0.3, scale: 0.85 },
-        {
+      });
+
+      // 1. Fill the progress line
+      tl.to(".roadmap-line-fill", { width: "100%", ease: "none" }, 0);
+
+      // 2. Animate nodes as they are crossed by the progress line
+      const nodeOffsets = [0.083, 0.25, 0.417, 0.583, 0.75, 0.917];
+
+      steps.forEach((step, idx) => {
+        const time = nodeOffsets[idx];
+        
+        // Node circle fills orange, white icon, grows, glows
+        tl.to(`.roadmap-circle-${idx}`, {
+          backgroundColor: "#E58F12",
+          borderColor: "#E58F12",
+          color: "#ffffff",
+          scale: 1.18,
+          boxShadow: "0 0 25px rgba(229, 143, 18, 0.65)",
+          opacity: 1,
+          duration: 0.12,
+          ease: "power2.out"
+        }, time - 0.04);
+
+        // Text content fades in and returns to normal scale
+        tl.to(`.roadmap-text-${idx}`, {
           opacity: 1,
           scale: 1,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: el,
-            start: "top 75%",
-            end: "bottom 60%",
-            scrub: true
-          }
-        }
-      );
+          duration: 0.1,
+          ease: "power2.out"
+        }, time);
+      });
     }, el);
 
     return () => ctx.revert();
@@ -113,6 +120,7 @@ export default function InvestorJourney() {
               <div key={idx} className="roadmap-node" style={{ textAlign: "center" }}>
                 {/* Node circle */}
                 <div 
+                  className={`roadmap-circle roadmap-circle-${idx}`}
                   style={{ 
                     width: "80px", 
                     height: "80px", 
@@ -126,6 +134,8 @@ export default function InvestorJourney() {
                     color: "var(--text-primary)",
                     boxShadow: "0 4px 10px rgba(0,0,0,0.02)",
                     position: "relative",
+                    opacity: 0.5,
+                    transform: "scale(0.9)",
                     transition: "border-color 0.4s ease"
                   }}
                 >
@@ -151,10 +161,12 @@ export default function InvestorJourney() {
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: "1.15rem", marginBottom: "8px", fontWeight: "600" }}>{step.title}</h3>
-                <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", lineHeight: "1.5", maxWidth: "180px", margin: "0 auto" }}>
-                  {step.desc}
-                </p>
+                <div className={`roadmap-text-${idx}`} style={{ opacity: 0.4, transform: "scale(0.95)" }}>
+                  <h3 style={{ fontSize: "1.15rem", marginBottom: "8px", fontWeight: "600" }}>{step.title}</h3>
+                  <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", lineHeight: "1.5", maxWidth: "180px", margin: "0 auto" }}>
+                    {step.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

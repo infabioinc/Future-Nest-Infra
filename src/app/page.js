@@ -7,8 +7,10 @@ import FeaturedOpportunity from "@/components/FeaturedOpportunity";
 import Stats from "@/components/Stats";
 import Opportunities from "@/components/Opportunities";
 import BentoGrid from "@/components/BentoGrid";
+import CompaniesInvested from "@/components/CompaniesInvested";
 import Calculator from "@/components/Calculator";
 import InvestorJourney from "@/components/InvestorJourney";
+import GallerySection from "@/components/GallerySection";
 import AboutSection from "@/components/AboutSection";
 import Testimonials from "@/components/Testimonials";
 import FAQSection from "@/components/FAQSection";
@@ -44,13 +46,19 @@ export default function Home() {
         {/* Section 08: Why Dholera Matters */}
         <BentoGrid />
         
-        {/* Section 09: Value Calculator */}
+        {/* Section 09: Companies Invested in Dholera SIR */}
+        <CompaniesInvested />
+        
+        {/* Section 10: Value Calculator */}
         <Calculator />
         
         {/* Section 10: Investor Journey Roadmap */}
         <InvestorJourney />
         
-        {/* Section 11: About Future Nest */}
+        {/* Section 11: Project & Press Gallery */}
+        <GallerySection />
+        
+        {/* Section 12: About Future Nest */}
         <AboutSection />
         
         {/* Section 12: Testimonials */}
